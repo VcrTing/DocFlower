@@ -1,0 +1,54 @@
+帮助:
+  docker version
+  docker info
+  docker --help
+  docker xxx --help
+
+镜像:
+  docker images # 本地镜像
+    -a: # 查询所有镜像
+    -q: # 只显示镜像 ID
+
+  docker search # 网络镜像
+    例子: docker search mysql # 搜索网络上的镜像信息
+
+  docker pull # 下载
+    例子: docker pull mysql # 简单下载
+    例子: docker pull docker.io/library/mysql:latest # 包含地址与版本的下载
+
+  docker rmi # 删除
+    -f ID: 根据 ID 删除
+    -f $(docker images -aq): 根据全部 Id 删除 全部
+
+容器:
+  docker pull centos # 下载 centos 容器
+
+  docker run -[xx] imageName
+
+    --name="NAME": 容器名字
+    -d: # 后台方式运行
+    -it: # 使用交互方式运行，可以进入容器
+    -p: # 指定容器端口如 -p 8080:8080
+
+    # 启动容器后，会发现启动的容器停止了，因为容器里面没有应用，docker 会自动停止没有应用或前台进程的容器
+
+  ls # 查看
+
+  exit # 停止容器并退出
+
+  docker ps # 查询运行中的容器
+    -a: # 列出正在运行的容器，与历史运行过的容器
+    -n=?: # 显示最近创建的容器
+    -q: # 只显示容器的编号
+
+  docker rm 容器ID # 移除容器，不能移除正在运行的容器
+    -f: # 强制删除某容器
+    -f $(docker ps -aq): # 移除所有容器
+
+  docker start ID # 启动
+  docker restart ID # 重启
+  docker stop ID # 停止
+  docekr kill ID # 强制停止容器
+
+查看日志:
+  docker logs

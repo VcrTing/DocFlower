@@ -1,0 +1,15 @@
+username,email,password,unid,turename,vip,superior_id_s,superior_id_e,superior_id_boss
+张零,lucy@vv.com,1234567,103,ZhangYi,603ca56ad5e45d01cc06ed70,,,
+张一 A,lucya@vv.com,1234567,1031,ZhangYi A,603ca544d5e45d01cc06ed6e,103,103,103
+张二 A,lucyaa@vv.com,1234567,10311,ZhangYi AA,603ca544d5e45d01cc06ed6e,1031,103,103
+张二 B,lucyab@vv.com,1234567,10312,ZhangYi AA,603ca544d5e45d01cc06ed6e,1031,103,103
+张二 C,lucyac@vv.com,1234567,10313,ZhangYi AA,603ca544d5e45d01cc06ed6e,1031,103,103
+张三 A,lucyaaa@vv.com,1234567,103111,ZhangYi AAA,603ca4a1d3bddd01bc396ea5,10311,1031,103
+张四 A,lucyaaaa@vv.com,1234567,1031111,ZhangYi AAAA,603ca4a1d3bddd01bc396ea5,103111,10311,103
+张五 A,lucyaaaaa@vv.com,1234567,10311111,ZhangYi AAAAA,603ca490d3bddd01bc396ea4,1031111,10311,103
+张六 A,lucyaaaaaa@vv.com,1234567,103111111,ZhangYi AAAAA,603ca463d3bddd01bc396ea2,10311111,10311111,103
+张七 A,lucyaaaaaaa@vv.com,1234567,1031111111,ZhangYi AAAAAA,603ca463d3bddd01bc396ea2,103111111,103111111,103
+张七 B,lucyaaaaaab@vv.com,1234567,1031111112,ZhangYi AAAAAB,603ca452d3bddd01bc396ea1,103111112,103111112,103
+张七 C,lucyaaaaaac@vv.com,1234567,1031111113,ZhangYi AAAAAC,603ca452d3bddd01bc396ea1,103111113,103111113,103
+张一 B,lucyb@vv.com,1234567,1032,ZhangYi B,603ca544d5e45d01cc06ed6e,103,103,103
+张一 C,lucyc@vv.com,1234567,1033,ZhangYi B,603ca557d5e45d01cc06ed6f,103,103,103

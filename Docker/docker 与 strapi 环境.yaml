@@ -1,0 +1,26 @@
+docker 安装 portainer-io(Linux):
+  docker volume create portainer_data
+  docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+  docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent
+
+  编辑文件:
+    sudo vim /usr/lib/systemd/system/docker.service
+    # 在 ExecStart行 -H 字眼的前面，插入内容 -H tcp://0.0.0.0:2375
+
+  重新加载:
+    systemctl daemon-reload
+    systemctl restart docker
+
+  访问:
+    http://xxx:9000/
+    # 设置完用户密码后
+    # 选择 docker
+
+进入 docker 目录:
+  进入strapi 目录:
+    docker exec -it root_strapi_1 bash
+
+  出现command not found 解决:
+    yum update
+    yum -y install net-tools
+    

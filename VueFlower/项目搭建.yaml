@@ -1,0 +1,15 @@
+新建项目:
+  vue init webpack NAME
+
+安装SASS:
+  npm i node-sass@4.14.1 sass-loader@7.1.0 style-loader --D
+
+或安装VUETIFY:
+  vue add vuetify
+  npm i sass vuetify deepmerge --D
+
+安装VUEX:
+  npm i vuex axios --D
+
+安装其它:
+  npm i @mdi/font material-design-icons-iconfont --D

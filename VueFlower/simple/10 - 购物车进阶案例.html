@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE EXAMPLE 10</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>购物车</h2>
+        <div class="cart" v-for="(v, k) in cart" :key="v">
+            <div class="col-6 cart-left">
+                <div>
+                    {{ v.product.name }}
+                </div>
+                <div class="sub-title">
+                    ¥ {{ v.product.price }}
+                </div>
+            </div>
+            <div class="col-6 cart-right">
+                <button @click="add(k)">+</button>
+                <span>{{ v.count }}</span>
+                <button @click="sub(k)">-</button>
+                <button @click="trash(k)">x</button>
+            </div>
+        </div>
+        <br/>
+        <p>总价：¥ {{ total }}</p>
+    </div>
+    <script>
+        
+        const app = new Vue({
+            el: '#app',
+            data: {
+                
+                cart: [
+                    {
+                        id: 0,
+                        count: 2,
+                        product: {
+                            id: 0,
+                            name: '社会心理学',
+                            price: 23
+                        }
+                    },
+                    {
+                        id: 1,
+                        count: 32,
+                        product: {
+                            id: 0,
+                            name: '人类简史',
+                            price: 18
+                        }
+                    },
+                    {
+                        id: 2,
+                        count: 1,
+                        product: {
+                            id: 0,
+                            name: '未来简史',
+                            price: 190
+                        }
+                    },
+                ]
+            }, 
+            methods: {
+                add(k) {
+                    this.cart[k].count += 1;
+                },
+                sub(k) {
+                    if (this.cart[k].count > 0) {
+                        this.cart[k].count -= 1;
+                    }
+                },
+                trash(k) {
+                    this.cart.splice(k, 1)
+                }
+            },
+            computed: {
+                total() {
+                    /*
+                    let res = 0;
+                    for(item of this.cart) {
+                        const count = item.count;
+                        const price = item.product.price;
+                        res += (count * price);
+                    }
+                    return res;
+                    */
+
+                    return this.cart.reduce((pre, item) => pre + (item.count * item.product.price), 0);
+                }
+            }
+        })
+        
+    </script>
+    <style>
+        .sub-title {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        .fl {
+            float: left;
+        }
+        .d-inline {
+            display: inline;
+        }
+        .cart {
+            height: 70px;
+            border-radius: 5px;
+            background: white;
+            width: 480px;
+            margin-bottom: 5px;
+        }
+        .cart-left, .cart-right {
+            float: left;
+            padding: 15px;
+        }
+        
+        .col-6 {
+            width: 240px;
+        }
+        
+        .hand {
+            cursor: pointer;
+            
+        }
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>

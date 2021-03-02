@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2</title>
+</head>
+<body>
+  <script>
+    // 普通写法
+    new Promise(resolve => {
+      setTimeout(() => { resolve('数据') }, 1200)
+    }).then(res => {
+
+      return Promise.resolve(res + '_后缀')
+    }).then(res => {
+      console.log('最终结果 = ' + res)
+    })
+
+    // 简写
+    new Promise(resolve => {
+      setTimeout(() => { resolve('数据2') }, 1200)
+    }).then(res => {
+
+      throw 'ERROR CODE'
+      return res + '_后缀'
+    }).then(res => {
+      console.log('最终结果2 = ' + res)
+    }).catch(err => {
+      console.log('错误 = ' + err)
+    })
+  </script>
+</body>
+</html>

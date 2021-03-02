@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE SLOT 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>简单SLOT:</h2>
+        <dan-div>
+            <p slot="last">我是传入的视图</p>
+        </dan-div>
+        <br/>
+
+        <dan-div>
+            <template slot-scope="slot" slot="last">
+                <p>{{ slot.data.join(', ') }}</p>
+            </template>
+        </dan-div>
+    </div>
+
+    <template id="dandom">
+        <div>
+            <p>子组件</p>
+            <slot name="last" :data="lang">
+                
+            </slot>
+        </div>
+    </template>
+
+
+    <script>
+        //注册
+        Vue.component('dan-div', {
+            template: '#dandom',
+            data() {
+                return {
+                    lang: [ 'cn', 'en', 'jp' ]
+                }
+            }
+        });
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                
+            }, 
+            methods: {
+                
+            },
+            computed: {
+                
+            }
+        })
+        
+    </script>
+    <style>
+        .sub-title {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        .fl {
+            float: left;
+        }
+        .d-inline {
+            display: inline;
+        }
+        .cart {
+            height: 70px;
+            border-radius: 5px;
+            background: white;
+            width: 480px;
+            margin-bottom: 5px;
+        }
+        .cart-left, .cart-right {
+            float: left;
+            padding: 15px;
+        }
+        
+        .col-6 {
+            width: 240px;
+        }
+        
+        .hand {
+            cursor: pointer;
+            
+        }
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>

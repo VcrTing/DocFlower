@@ -1,0 +1,4 @@
+username,email,password,unid,turename,vip,superior_id_s,superior_id_e,superior_id_boss
+Lucy,lucy@vv.com,1234567,103,ZhangYi,603ca56ad5e45d01cc06ed70,,,
+Lucy A,lucya@vv.com,1234567,1031,ZhangYi A,603ca544d5e45d01cc06ed6e,103,103,103
+Lucy B,lucyb@vv.com,1234567,1032,ZhangYi B,603ca544d5e45d01cc06ed6e,103,103,103

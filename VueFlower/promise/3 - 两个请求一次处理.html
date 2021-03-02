@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3</title>
+</head>
+<body>
+  <script>
+    new Promise.all(resolve => {
+
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('结果一')
+        }, 3000)
+      })
+
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('结果二')
+        }, 1000)
+      })
+
+    }).then(ress => {
+      console.log('最后的结果是 ' + ress)
+    })
+  </script>
+</body>
+</html>

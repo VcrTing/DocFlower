@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE EXAMPLE 07</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>计算属性</h2>
+        <p>计算属性具有缓存，多次调用仅执行计算一次的操作</p>
+        <p>{{ fullName }}</p>
+    </div>
+    <script>
+        
+        const app = new Vue({
+            el: '#app',
+            data: {
+                first: 'VcrT',
+                last: 'ing',
+                books: [
+                    {
+                        id: 1,
+                        name: '乌合之众',
+                        price: 129
+                    },
+                    {
+                        id: 2,
+                        name: '人类简史',
+                        price: 129
+                    },
+                    {
+                        id: 1,
+                        name: '社会心理学',
+                        price: 129
+                    }
+                ]
+            }, 
+            computed: {
+                fullName: {
+                    set: function(newVal, oldVal) {
+                        console.log('调用了, 新的值为：' + newVal);
+                    },
+                    get: function() {
+                        return this.first + this.last;
+                    }
+                },
+                fullPrice: function() {
+                    let res = 0;
+                    /*
+                    for (let i= 0; i< this.books.length; i++ ) {
+                        res += this.books[i].price;
+                    }
+                    */
+                    for (let book of this.books) {
+                        res += book.price;
+                    }
+                    return res;
+                }
+            },
+            methods: {
+                
+            }
+        })
+        
+    </script>
+    <style>
+        .hand {
+            cursor: pointer;
+            
+        }
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>

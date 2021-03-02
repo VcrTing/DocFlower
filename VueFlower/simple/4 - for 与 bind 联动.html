@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE EXAMPLE 04</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>for 与 bind 的联动</h2>
+        
+        <h3>点击某项，该项改变颜色。</h3>
+        <ul>
+            <li v-for="(v, i) in books " @click="turnColor(i)"><p class="hand" v-bind:class="{ red: (i == nowRed) }">{{ v }}</p></li>
+        </ul>
+
+        <h3>联动对象，实现点赞。</h3>
+        <ul>
+            <li v-for="(v, i) in movies">{{ v['name'] }} <button @click="doGood(v['id'])">({{ v['good'] }})赞</button></li>
+        </ul>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                books: [ '月亮与六便士', '社会心理学', '乌合之众' ],
+                nowRed: -1,
+                movies: [
+                    {
+                        'id': 0,
+                        'name': '让子弹飞',
+                        'good': 120
+                    },
+                    {
+                        'id': 1,
+                        'name': '海王',
+                        'good': 88
+                    },
+                    {
+                        'id': 2,
+                        'name': '盗梦空间',
+                        'good': 199
+                    },
+                ],
+            }, 
+            methods: {
+                doGood(id) {
+                    this.movies.forEach(element => {
+                        if (element['id'] == id) {
+                            element['good'] += 1;
+                        }
+                    });
+                },
+                turnColor(i) {
+                    console.log(i);
+                    this.nowRed = i;
+                }
+            }
+        })
+    </script>
+    <style>
+        li {
+            width: 50%;
+        }
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+        .hand, button {
+            cursor: pointer;
+        }
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>

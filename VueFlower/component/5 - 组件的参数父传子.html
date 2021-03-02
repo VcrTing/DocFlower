@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE EXAMPLE 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>组件参数:</h2>
+        <dan-div :hoppychild="hoppy"></dan-div>
+    </div>
+    <template id="chilDiv">
+        <div>这里是组件内容:
+            <div>
+
+                <p v-for="item in hoppychild">{{ item }}</p>
+            </div>
+        </div>
+    </template>
+    <script>
+        // 创建
+        const danDiv = {
+            template: '#chilDiv',
+            props: {
+                hoppychild: {
+                    type: Array,
+                    default() {
+                        return this.hoppyTest;
+                    },
+                    required: true,
+                    validator: function(v) {
+                        return v;
+                    }
+                }
+            },
+            data() {
+                return {
+                    hoppyTest: [ 'a', 'b' ]
+                }
+            }
+        };
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                hoppy: ['看电视', '听音乐', '看电影']
+            },
+            components: {
+                'dan-div': danDiv
+            }
+        })
+        
+    </script>
+    <style>
+        .sub-title {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        .fl {
+            float: left;
+        }
+        .d-inline {
+            display: inline;
+        }
+        .cart {
+            height: 70px;
+            border-radius: 5px;
+            background: white;
+            width: 480px;
+            margin-bottom: 5px;
+        }
+        .cart-left, .cart-right {
+            float: left;
+            padding: 15px;
+        }
+        
+        .col-6 {
+            width: 240px;
+        }
+        
+        .hand {
+            cursor: pointer;
+            
+        }
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>

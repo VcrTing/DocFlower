@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE EXAMPLE 8</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>父子参数案例:</h2>
+        <br/>
+
+        <h3>这里是父组件：</h3>
+        <div>
+            <p>展示来自子组件的参数：</p>
+            <p class="blue">{{ showChild }}</p>
+        </div>
+        <br/>
+
+        <h3>这里是子组件：</h3>
+        <example-children-dom ref="childom"></example-children-dom>
+
+        <br/>
+        <button @click="getChildParam" class="hand">点击获取子组件参数</button>
+    </div>
+
+    <template id="child">
+        <div class="root">
+            <p>这是子组件</p>
+        </div>
+    </template>
+
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                showChild: ''
+            },
+            methods: {
+                getChildParam() {
+                    this.showChild = this.$refs.childom.paramChild
+                }
+            },
+            components: {
+                'example-children-dom': {
+                    template: '#child',
+                    data() {
+                        return {
+                            paramChild: 'Come from Children.'
+                        };
+                    },
+                }
+            }
+        })
+        
+    </script>
+    <style>
+        .sub-title {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        .fl {
+            float: left;
+        }
+        .d-inline {
+            display: inline;
+        }
+        .cart {
+            height: 70px;
+            border-radius: 5px;
+            background: white;
+            width: 480px;
+            margin-bottom: 5px;
+        }
+        .cart-left, .cart-right {
+            float: left;
+            padding: 15px;
+        }
+        
+        .col-6 {
+            width: 240px;
+        }
+        
+        .hand {
+            cursor: pointer;
+            
+        }
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>

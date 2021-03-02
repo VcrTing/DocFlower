@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE EXAMPLE 03</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>需与不需某属性</h2>
+        <div v-bind:class="{ red: isRed, blue: isBlue }">Here is color view.</div>
+        <button @click="turnRed">Red</button>
+        <button @click="turnBlue">Blue</button>
+        <button @click="clear()">Clear Color</button>
+    </div>
+    <script>
+        setTimeout(function() {
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                isRed: false,
+                isBlue: false,
+            }, 
+            methods: {
+                turnRed() {
+                    // this.clear()
+                    this.isRed = !this.isRed;
+                    this.isBlue = false;
+                },
+                turnBlue() {
+                    // this.clear()
+                    this.isBlue = !this.isBlue;
+                    this.isRed = false;
+                },
+                clear() {
+                    this.isBlue = false;
+                    this.isRed = false;
+                }
+            }
+        })
+        }, 2000)
+        
+    </script>
+    <style>
+        .red {
+            color: rgba(255, 174, 200, 1);
+        }
+        .blue {
+            color: rgba(0, 168, 243, 1);
+        }
+
+        button {
+            border: 1px solid #eeeeee;
+            border-radius: 3px;
+            background: white;
+            padding: 8px 12px;
+            margin: 8px;
+        }
+        body {
+            padding: 30px;
+        }
+        [v-cloak] {
+            display: none;
+        }
+        .img {
+            width: 270px;
+            height: auto;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .img img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>
