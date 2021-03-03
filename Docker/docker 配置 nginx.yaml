@@ -1,0 +1,23 @@
+准备三个文件: # 任意目录下
+  dockerfile
+  nginx.conf
+  dist # vue 的 dist 文件夹
+
+下载nginx:
+  docker pull nginx
+
+关闭可能正在运行的nginx:
+  docker ps -a
+  docker stop ID
+  docker rm ID
+
+dockerfile 文件内部详情:
+  FROM nginx
+  COPY oilsdemo/ /usr/share/nginx/html/
+  COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+打包镜像:
+  docker build -t nginx_vue .
+
+运行: # 拿到打包后的 ID
+  docker run -p 80:80 -d --name nginx_vue ID

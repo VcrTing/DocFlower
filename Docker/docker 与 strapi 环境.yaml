@@ -18,7 +18,7 @@ docker 安装 portainer-io(Linux):
 
 进入 docker 目录:
   进入strapi 目录:
-    docker exec -it root_strapi_1 bash
+    docker exec -it nginx bash
 
   出现command not found 解决:
     yum update
