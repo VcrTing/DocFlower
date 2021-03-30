@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02</title>
+</head>
+<body>
+    <script>
+        function num(n) {
+            const res = []
+            const resL = []
+            
+            res.push(n[0])
+            n = n.slice(1)
+
+            console.log(n)
+            n.map(e => {
+                if (e > res[res.length]) {
+                    res.push(e)
+                } else {
+                    
+                }
+            })
+        }
+
+        console.log(num(
+            [ 0, 2, 1, 45, 7, 3, 120, 99, 100, 77, 10]
+        ))
+    </script>
+</body>
+</html>

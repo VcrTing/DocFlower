@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01</title>
+</head>
+<body>
+    <script>
+        var list = [
+            { name: '根目录1' , id: 1, parentId: 0 }, 
+            { name: '根目录2' , id: 2, parentId: 0 },
+            { name: '目录1-1' , id: 3, parentId: 1 },
+            { name: '目录1-2' , id: 4, parentId: 1 },
+            { name: '目录2-1' , id: 5, parentId: 2 },
+            { name: '目录1-2-1' , id: 6, parentId: 4 }
+        ]
+
+        function arrayToTree(arr, pId) {
+            
+            let res = []
+
+                    
+            let n = [].concat(arr)
+            n.forEach((e, i) => {
+                
+                if (e.parentId == pId) {
+
+                    const children = arrayToTree(arr, e.id)
+
+                    if (children && children.length > 0) {
+                        e.children = children
+                    } else {
+
+                    }
+
+                    res.push(e)
+                }
+
+            })
+                
+            return res
+        } 
+
+        console.log(arrayToTree(list , 0))
+    </script>
+</body>
+</html>

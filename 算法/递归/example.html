@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01</title>
+</head>
+<body>
+    <script>
+        var list = [
+            { name: '根目录1' , id: 1, parentId: 0 }, 
+            { name: '根目录2' , id: 2, parentId: 0 },
+            { name: '目录1-1' , id: 3, parentId: 1 },
+            {name: '目录1-2' , id: 4, parentId: 1 },
+            {name: '目录2-1' , id: 5, parentId: 2 },
+            {name: '目录1-2-1' , id: 6, parentId: 4 }
+        ]
+
+        function arrayToTree(arr, parentId) {
+             //  arr 是返回的数据  parendId 父id
+
+            let temp = [];
+
+            let treeArr = arr;
+
+            treeArr.forEach((item, index) => {
+                if (item.parentId == parentId) {
+                    if (arrayToTree(treeArr, treeArr[index].id).length > 0) {
+                        // 递归调用此函数
+                        treeArr[index].children = arrayToTree(treeArr, treeArr[index].id);
+
+                    }
+
+                    temp.push(treeArr[index]);
+                }
+
+           });
+
+           return temp;
+        } 
+
+        function listToTree(lst, pid) {
+            const that = this
+            let tmp = []
+            let treeLst = lst
+            treeLst.forEach((item, index) => {
+                if (item.parentId === pid) {
+                const children = that.listToTree(treeLst, item.id)
+                if (children && (children.length > 0)) {
+                    treeLst[index].children = children
+                }
+                tmp.push(treeLst[index])
+                }
+            })
+            return tmp
+        }
+
+        console.log(listToTree(list , 0))
+    </script>
+</body>
+</html>
