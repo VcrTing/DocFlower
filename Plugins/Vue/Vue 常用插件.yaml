@@ -1,0 +1,22 @@
+
+nprogress:
+  顶部滚动条
+  # https://github.com/rstacruz/nprogress
+
+echarts:
+  统计图
+  # https://echarts.baidu.com/examples/
+
+vue-lazyload:
+  图片懒加载
+  # https://github.com/hilongjw/vue-lazyload
+
+moment:
+  日期处理
+  # http://momentjs.cn/
+
+layer:
+  弹出层
+  # https://layer.layui.com/
+
+  
