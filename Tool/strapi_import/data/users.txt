@@ -1,4 +1,32 @@
-username,email,password,unid,turename,vip,superior_id_s,superior_id_e,superior_id_boss
-Lucy,lucy@vv.com,1234567,103,ZhangYi,603ca56ad5e45d01cc06ed70,,,
-Lucy A,lucya@vv.com,1234567,1031,ZhangYi A,603ca544d5e45d01cc06ed6e,103,103,103
-Lucy B,lucyb@vv.com,1234567,1032,ZhangYi B,603ca544d5e45d01cc06ed6e,103,103,103
+username,email,password,unid,sponser_id,enroller_id,is_new,display_name
+ECMARKETING,ECMARKETING@qq.com,1234567,2,1,1,true,EC Marketing Limited
+VDE,VDE@qq.com,1234567,3,2,2,true,V.D.E. International Limited
+lingcheung,lingcheung@qq.com,1234567,4,3,3,true,Nga Ling Cheung
+muspiration,muspiration@qq.com,1234567,5,2,2,true,MUSPIRATION PIANO PERFORMING MUSIC STUDIO
+LOUIS,LOUIS@qq.com,1234567,6,1,1,true,LAI Cheuk Kit Louis
+florace,florace@qq.com,1234567,7,6,6,true,FLORACE INTERNATIONAL HK LIMITED
+yield,yield@qq.com,1234567,8,6,6,true,YIELD PROFIT TRADING LIMITED
+ngseetan,ngseetan@qq.com,1234567,9,1,1,true,NG SEE TAN
+zengsuyun,zengsuyun@qq.com,1234567,10,9,9,true,ZENG SUYUN
+ausauchi,ausauchi@qq.com,1234567,11,10,10,true,AU SAU CHI
+tsangliyung,tsangliyung@qq.com,1234567,12,10,10,true,TSANG LI TUNG
+makyee,makyee@qq.com,1234567,13,12,12,true,Mak Yee
+icypeng,icypeng@qq.com,1234567,14,12,12,true,Peng Icy
+pollyyu,pollyyu@qq.com,1234567,15,12,9,true,Yu Kwai Mei Polly
+tsangsiupan,tsangsiupan@qq.com,1234567,16,10,10,true,TSANG SIU PAN
+alicewan,alicewan@qq.com,1234567,17,10,9,true,Wan Lok Hsi
+charlenemak,charlenemak@qq.com,1234567,18,10,9,true,Mak Charlene
+punlan,punlan@qq.com,1234567,19,10,10,true,punlan
+leungyukchun,leungyukchun@qq.com,1234567,20,9,9,true,LEUNG YUK CHUN
+THIRU,THIRU@qq.com,1234567,21,20,9,true,Nachiappan Thirupathi
+graceyu,graceyu@qq.com,1234567,22,20,9,true,Yu Grace
+maychan,maychan@qq.com,1234567,23,20,20,true,Chan Kam Mui
+tsebikkei,tsebikkei@qq.com,1234567,24,9,9,true,TSE BIK KEI
+veronicalau,veronicalau@qq.com,1234567,25,24,9,true,Lau Veronica
+kcho,kcho@qq.com,1234567,26,24,9,true,Ho KC
+sylvialiu,sylvialiu@qq.com,1234567,27,24,9,true,Liu Yuk Ha Sylvia
+Iniskim1668,Iniskim1668@qq.com,1234567,28,9,9,true,Ho Vicky
+lauasia,lauasia@qq.com,1234567,29,1,1,true,Lau (Asia) Distribution Limited
+DNS,DNS@qq.com,1234567,30,1,1,true,DNS WORLDWIDE LIMITED
+mobox,mobox@qq.com,1234567,31,1,1,true,MOBOX HK LIMITED
+chanchifai,chanchifai@qq.com,1234567,32,1,1,true,PREMIER CAPTIAL WEALTH MANAGEMENT (ASIA) LIMITED
