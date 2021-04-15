@@ -1,0 +1,2 @@
+端口开启:
+  iptables -L -n
