@@ -19,4 +19,8 @@ layer:
   弹出层
   # https://layer.layui.com/
 
+lodash:
+  高级 Js 处理工具
+  # https://www.lodashjs.com/
+
   
