@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        BEFORE: 在元素之前插入东西
+    </div>
+
+    <div class="line">
+        分割线
+    </div>
+
+    <div class="arrow-right">
+        查看详情
+    </div>
+
+    <div class="inner-trange"></div>
+<style>
+body {
+    padding: 2vw;
+}
+div {
+    margin-top: 24px;
+    box-sizing: border-box !important;
+}
+.content::before {
+    content: 'TIP: ';
+    color: red;
+}
+
+.line {
+    width: 100%;
+    color: pink;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line::before,
+.line::after {
+    display: block;
+    height: 1px;
+    background-color: pink;
+    content: '';
+    flex: 1;
+}
+.line::before {
+    margin-right: 12px;
+}
+.line::after {
+    margin-left: 12px;
+}
+
+.arrow-right {
+    width: 30vw;
+    position: relative;
+}
+.arrow-right::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid skyblue;
+    border-bottom: 2px solid skyblue;
+    transform: rotate(-40deg) skew(10deg, 0);
+}
+
+.inner-trange {
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid purple;
+    position: relative;
+}
+.inner-trange::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 12px 12px 12px;
+    margin-left: -12px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: purple;
+}
+</style>
+</body>
+</html>
