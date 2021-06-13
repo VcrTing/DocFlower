@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn b1">Hover Me</button>
+        <button class="btn b2">Hover Me</button>
+        <button class="btn b3">Hover Me</button>
+        <button class="btn b4">Hover Me</button>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #f1f1f1;
+        }
+        
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .btn {
+            border: none;
+            margin: 20px;
+            padding: 24px;
+            width: 220px;
+            font-family: 'montserrat', sans-serif;
+            text-transform: uppercase;
+            border-radius: 6px;
+            cursor: pointer;
+
+            color: #fff;
+            background-size: 200%;
+            transition: 0.6s;
+            background-position: left;
+        }
+
+        .b1 {
+            background-image: linear-gradient(to left, #FFC312, #EE5A24, #FFC312);
+        }
+        .b2 {
+            background-image: linear-gradient(to left, #C4E538, #009432, #C4E538);
+        }
+        .b3 {
+            background-image: linear-gradient(to left, #12CBC4, #0652DD, #12CBC4);
+        }
+        .b4 {
+            background-image: linear-gradient(to left, #FDA7DF, #9980FA, #FDA7DF);
+        }
+
+        .btn:hover {
+            background-position: right;
+        }
+    </style>
+</body>
+</html>

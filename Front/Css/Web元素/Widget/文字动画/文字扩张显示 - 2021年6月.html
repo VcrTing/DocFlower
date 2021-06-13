@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text middle">
+        <span>D</span>
+        <span class="hidden">A</span>
+        <span class="hidden">R</span>
+        <span class="hidden">K</span>
+        <span>C</span>
+        <span class="hidden">O</span>
+        <span class="hidden">D</span>
+        <span class="hidden">E</span>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #487eb0;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .text {
+            color: #fff;
+            font-size: 70px;
+            font-family: 'montserrat', sans-serif;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .hidden {
+            max-width: 0;
+            opacity: 0;
+            transition: 0.5s ease-in;
+        }
+
+        .text:hover .hidden {
+            opacity: 1;
+            max-width: 1em;
+        }
+        
+    </style>
+</body>
+</html>

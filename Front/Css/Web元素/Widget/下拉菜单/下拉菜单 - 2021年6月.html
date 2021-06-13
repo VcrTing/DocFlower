@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="middle">
+        <div class="sm-container">
+            <span class="sm-btn">
+                MENU
+            </span>
+
+            <div class="sm-menu">
+                <a href="http://www.baidu.com/">
+                    <div>A</div>
+                </a>
+                <a href="http://www.baidu.com/">
+                    <div>B</div>
+                </a>
+                <a href="http://www.baidu.com/">
+                    <div>C</div>
+                </a>
+                <a href="http://www.baidu.com/">
+                    <div>D</div>
+                </a>
+            </div>
+
+        </div>
+        <div class="fs-light bottom-text">
+            This is a menu tutorial.
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #9c88ff;
+        }
+        a {
+            text-decoration: none;
+        }
+        .bottom-text {
+            margin-top: 270px
+        }
+        .fs-light {
+            color: #f5f6fa;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sm-container {
+            text-align: center;
+            position: relative;
+        }
+        .sm-btn {
+            padding: 10px 10px;
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            cursor: pointer;
+            color: #f5f6fa;
+        }
+
+        .sm-menu {
+            background: #487eb0;
+            border-radius: 8px;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+
+        }
+        .sm-menu a div {
+            color: #f5f6fa;
+            padding: 5px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: .4s;
+            text-decoration: none;
+        }
+
+        .sm-menu a:hover div {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        .sm-menu::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #487eb0;
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .sm-btn:hover ~ .sm-menu,
+        .sm-menu a:hover ~ .sm-menu {
+            opacity: 1;
+            transition: all .8s;
+        }
+    </style>
+</body>
+</html>

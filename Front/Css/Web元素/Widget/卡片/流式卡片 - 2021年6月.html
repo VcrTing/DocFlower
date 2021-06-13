@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <link rel="stylesheet" derf="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" derf="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</head>
+<body>
+    <div class="monial-section">
+        <div class="inner-width">
+            <h1>What Client Says</h1>
+            <div class="border"></div>
+
+            <div class="sliders owl-carousel">
+                <div class="monial">
+                    <div class="info">
+                        <img class="pic" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3107083461,4268460867&fm=26&gp=0.jpg">
+                        <div class="name">
+                            <span>Client</span>
+                            @client
+                        </div>
+                    </div>
+
+                    <p>
+                        There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.
+                    </p>
+                </div>
+                <div class="monial">
+                    <div class="info">
+                        <img class="pic" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2113373100,550995939&fm=26&gp=0.jpg">
+                        <div class="name">
+                            <span>Client</span>
+                            @client
+                        </div>
+                    </div>
+
+                    <p>
+                        May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably hurts the other person, too.
+                    </p>
+                </div>
+                <div class="monial">
+                    <div class="info">
+                        <img class="pic" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2284197561,802618237&fm=26&gp=0.jpg">
+                        <div class="name">
+                            <span>Client</span>
+                            @client
+                        </div>
+                    </div>
+
+                    <p>
+                        The happiest of people don’t necessarily have the best of everything;they just make the most of everything that comes along their way.Happiness lies for those who cry,those who hurt, those who have searched,and those who have tried,for only they can appreciate the importance of people
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        /*
+        $('.owl-carousel').owlCarousel({ 
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                680: {
+                    items: 2
+                },
+                960: {
+                    items: 3
+                }
+            }
+        })
+        */
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'montserrat', sans-serif;
+        }
+        body {
+            background: #3498db;
+        }
+
+        .inner-width h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .monial-section {
+            padding: 40px 0;
+        }
+        .inner-width {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .border {
+            width: 100px;
+            height: 3px;
+            background: #333;
+            margin: 40px auto;
+        }
+
+        .monial {
+            background: #f1f1f1;
+            padding: 40px;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .monial:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
+        }
+        .info {
+            display: flex;
+            height: 60px;
+            align-items: center;
+        }
+
+        .pic {
+            width: 50px;
+            border-radius: 100%;
+            margin-right: 15px;
+        }
+
+        .name {
+            font-size: 12px;
+            color: #333;
+        }
+
+        .name span {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: #3498db;
+        }
+
+        .monial p {
+            font-size: 12px;
+            line-height: 22px;
+            margin-top: 20px;
+        }
+
+        .sliders {
+            overflow: hidden;
+        }
+
+        /* */
+        @media (max-width: 691px) {
+            .monial {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 690px) {
+            .sliders {
+                display: flex;
+                justify-content: space-between;
+                align-items: top;
+            }
+            .monial {
+                width: 32%;
+            }
+        }
+    </style>
+</body>
+</html>
