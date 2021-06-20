@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <form class="login-form middle">
+        <h1>Login</h1>
+
+        <div class="txtb">
+            <input type="text">
+            <span data-placeholder="Username"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="password">
+            <span data-placeholder="Password"></span>
+        </div>
+
+        <input type="submit" class="loginbtn" value="Login">
+
+        <div class="bottom-text">
+            Dont's have account? <a href="#">Sign Up</a>
+        </div>
+    </form>
+
+    <style>
+
+        .login-form {
+            width: 360px;
+            background: #f1f1f1;
+            padding: 80px 40px;
+            border-radius: 10px;
+            padding-bottom: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .txtb {
+            border-bottom: 2px solid #adadad;
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .txtb input {
+            font-size: 15px;
+            color: #333;
+            border: none;
+            width: 100%;
+            outline: none;
+            background: none;
+            padding: 0 5px;
+            height: 40px;
+        }
+
+        .txtb span::before {
+            content: attr(data-placeholder);
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            color: #adadad;
+            transform: translateY(-50%);
+
+            z-index: -1;
+            transition: all .5s;
+        }
+
+        .txtb span::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(120deg, #3498db, #8e44ad);
+            transition: .5s;
+        }
+
+        .focus + span::before {
+            top: -5px;
+        }
+
+        .focus + span::after {
+            width: 100%;
+        }
+
+        .loginbtn {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            text-align: center;
+            color: white;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            background-image: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
+            background-size: 200%;
+            outline: none;
+            cursor: pointer;
+            transition: .8s;
+        }
+        .loginbtn:hover {
+            background-position: right;
+        }
+
+        .bottom-text {
+            text-align: center;
+            color: #333;
+            font-size: 15px;
+            margin-top: 20px
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: linear-gradient(120deg, #3498db, #8e44ad);
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none !important;
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+        $('.txtb input').on('focus', function() {
+            $(this).addClass('focus');
+        })
+        $('.txtb input').on('blur', function() {
+            if ($(this).val() == '')
+            $(this).removeClass('focus');
+        })
+
+
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

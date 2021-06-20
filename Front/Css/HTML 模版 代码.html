@@ -28,5 +28,22 @@
             font-family: 'montserrat', sans-serif;
         }        
     </style>
+
+    <script>
+
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
 </body>
 </html>

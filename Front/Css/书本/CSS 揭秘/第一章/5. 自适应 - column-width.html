@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改页面属于未解之谜页面</title>
+</head>
+<body>
+    <div class="middle">
+        <div class="col-1">列宽100px</div>
+        <div class="col-2">列宽300px</div>
+        <div class="col-3">列宽500px</div>
+        <div class="col-4">列宽70%</div>
+    </div>
+
+    <style>
+        .middle div {
+            background: #0984e3;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            padding: 24px;
+            margin: 1px;
+        }
+        .col-1 {
+            column-width: 100px;
+        }
+        .col-2 {
+            column-width: 300px;
+        }
+        .col-3 {
+            column-width: 500px;
+        }
+        .col-4 {
+            column-width: 70%;
+        }
+        
+
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

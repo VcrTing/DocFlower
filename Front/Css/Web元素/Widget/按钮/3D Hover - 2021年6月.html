@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn b1">Hover Me</button>
+        <button class="btn b2">Hover Me</button>
+        <button class="btn b3">Hover Me</button>
+        <button class="btn b4">Hover Me</button>
+    </div>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }   
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } 
+
+        .btn {
+            width: 220px;
+            height: 50px;
+            background: #6a89cc;
+            margin: 40px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: .4s;
+            transform-style: preserve-3d;
+            perspective: 400px;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            background: #4a69bd;
+            transition: .4s;
+        }
+
+        .b1:hover {
+            transform: rotateX(-60deg);
+        }
+        .b1::after {
+            width: 100%;
+            height: 24px;
+            top: -24px;
+            left: 0;
+            transform-origin: 0 100%;
+            transform: rotateX(90deg)
+        }
+    </style>
+</body>
+</html>

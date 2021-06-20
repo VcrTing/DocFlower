@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let resource = [
+            { name: 'Rose', member_code: 2, sponer_id: 1 },
+            { name: 'Jack', member_code: 1, sponer_id: 1 },
+            { name: 'Bob', member_code: 3, sponer_id: 2 },
+            { name: 'Lucy', member_code: 4, sponer_id: 3 },
+            { name: 'JieXi', member_code: 5, sponer_id: 3 }
+            /* 允许出现 两个 Father
+            ,
+            { name: 'Jack_Copy', member_code: 101, sponer_id: 101 },
+            { name: 'Rose_Copy', member_code: 102, sponer_id: 101 }
+            */
+        ]
+
+        const is_father = function(v) {
+            return (v['member_code'] == v['sponer_id']) ? true : false
+        }
+
+        const _build = function(list) {
+            let temp = {}
+            let tree = {}
+
+            for (let i in list) {
+                temp[
+                    list[i]['member_code']
+                ] = list[i];
+            }
+
+            for (let i in temp) {
+
+                if (
+                    !is_father(temp[i])
+                ) {
+                    let father = temp[
+                        temp[i]['sponer_id']
+                    ];
+
+                    if (!father['children']) {
+                        father['children'] = new Object();
+                    }
+
+                    const child_member_code = temp[i]['member_code']
+                    father['children'][
+                        child_member_code
+                    ] = temp[i]
+                } {
+                    tree[
+                        temp[i]['member_code']
+                    ] = temp[i]
+                }
+            }
+            return tree
+        }
+
+        // 利用了 Object 类型的 跨时空 根据 Key 索取 Value 的特性
+        const res = _build(resource)
+
+        console.log('res =', res)       
+    </script>
+</body>
+</html>

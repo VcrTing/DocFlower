@@ -1,0 +1,63 @@
+original blog: https://medium.com/@derrickmehaffy/using-strapi-in-production-with-https-717af82d1445
+
+centos 安装 mysql:
+  1.rpm -qa | grep mariadb
+  # 大概率是下面这个结果
+  # mariadb-libs-5.5.68-1.el7.x86_64
+  2.rpm -e --nodeps [1命令所得到的结果]
+  3.yum -y remove [1命令所得到的结果]
+  4.yum update -y
+  5.wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+  6.rpm -Uvh https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+  7.yum install -y mysql-community-server
+  8.service mysqld start
+  9.service mysqld status
+  10.grep 'temporary password' /var/log/mysqld.log
+  11.mysql -u root -p
+  12.ALTER USER 'root'@'localhost' IDENTIFIED BY [新密码];
+  13.exit;
+  14.service mysqld restart
+  15.mysql -u root -p
+  16.CREATE DATABASE [数据库名称] DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+  17.exit;
+
+centos 安装 strapi:
+  0. rm -rf *
+  1.curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+  2.yum -y install nodejs
+  3.curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+  4.yum install -y yarn
+  5.yarn create strapi-app [项目名称] --quickstart
+
+strapi连接至mysql:
+  1.ls
+  2.yum install vim -y
+  3.cd [Strapi项目]
+  4.sudo npm install
+  5.npm audit fix
+  6.sudo npm install mysql --save
+  6.vim ./config/database.js
+  3.修改配置如下
+    module.exports = ({ env }) => ({
+      defaultConnection: 'default',
+      connections: {
+        default: {
+          connector: 'bookshelf',
+          settings: {
+
+                client: "mysql",
+                database: "数据库名称",
+                host: "localhost",
+                port: "3306",
+                username: "root",
+                password: "登录密码",
+                // filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+          },
+          options: {
+            useNullAsDefault: true,
+          },
+        },
+      },
+    })
+  7.npm run develop
+

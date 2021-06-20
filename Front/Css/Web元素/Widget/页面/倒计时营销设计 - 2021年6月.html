@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+</head>
+<body>
+    <div class="page">
+        <div class="countdown-col col">
+            <div class="time middle">
+
+                <span>
+                    <div id="d">000</div>
+                    Days
+                </span>
+
+                <span>
+                    <div id="h">00</div>
+                    Hours
+                </span>
+
+                <span>
+                    <div id="m">00</div>
+                    Minutes
+                </span>
+
+                <span>
+                    <div id="s">00</div>
+                    Seconds
+                </span>
+            </div>
+        </div>
+        <div class="col newsletter-col">
+            <div class="newsletter middle">
+                <h2>We Will Coming Soon</h2>
+                <h4>Subscribe to get notification when we start</h4>
+                <form action="">
+                    <input type="text" placeholder="Enter Your Email">
+                    <input class="newsletter-btn" type="button" value="Subscribe">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .page {
+            background: #f1f1f1;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 1;
+            height: 100vh;
+            position: relative;
+        }
+        .countdown-col {
+            background: url(https://images.unsplash.com/photo-1515106426117-7483c8b91e9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);
+            background-size: cover;
+        }
+        .countdown-col::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            opacity: 0.08;
+            width: 100%;
+            height: 100%;
+        }
+        .time {
+            color: #fff;
+            text-transform: uppercase;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .time span {
+            padding: 0 14px;
+            font-size: 10px;
+        }
+        .time span div {
+            font-size: 40px;
+        }
+
+        .newsletter {
+            width: 90%;
+        }
+        .newsletter h4 {
+            font-style: italic;
+            font-size: 12px;
+        }
+        .newsletter input {
+            display: block;
+            margin: 12px auto;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+        .newsletter-btn {
+            background: linear-gradient(125deg, #3498db, #34495e);
+            color: white;
+            cursor: pointer;
+            transition: .4s;
+        }
+        .newsletter-btn:hover {
+            opacity: .7;
+        }
+
+        @media screen and (max-width: 900px) {
+            .col {
+                flex: 100%;
+            }
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+        var coming = new Date('Jan 1, 2022 00:00:00')
+        var d = document.getElementById('d')
+        var h = document.getElementById('h')
+        var m = document.getElementById('m')
+        var s = document.getElementById('s')
+
+        var x = setInterval(function() {
+            var now = new Date()
+            var des = coming.getTime() - now.getTime();
+
+            if (des <= 0) { clearInterval(x); return };
+
+            var days = Math.floor(des / (1000 * 60 * 60 * 24));
+            var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
+            var secs = Math.floor(des%(1000 * 60) / 1000);
+
+            d.innerHTML = serialTimeNumber(days);
+            h.innerHTML = serialTimeNumber(hours);
+            m.innerHTML = serialTimeNumber(mins);
+            s.innerHTML = serialTimeNumber(secs);
+        }, 1000)
+
+        function serialTimeNumber(m) {
+            if (m < 10) return '0' + m;
+            else return m
+        }
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

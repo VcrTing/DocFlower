@@ -1,0 +1,147 @@
+
+安装 mongoDB: # https://www.cnblogs.com/gme5/p/11765151.html
+  0.
+    sudo yum install -y vim
+
+  1.
+    vim /etc/yum.repos.d/mongodb-org-4.0.repo
+
+  2.
+    填入以下:
+[mongodb-enterprise]
+name=MongoDB Enterprise Repository
+baseurl=https://repo.mongodb.com/yum/redhat/$releasever/mongodb-enterprise/4.2/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+
+  3.
+    sudo yum install -y mongodb-enterprise
+
+  3.5.
+    可能要禁止mongodb自动升级
+
+  4.
+    systemctl start mongod
+
+  5.
+    systemctl enable mongod
+
+  6.
+    mongo
+
+  7.
+    show dbs
+
+  8.
+    use admin
+
+  9. 
+    db.createUser( { user: "设置帐号", pwd: "设置密码", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] } )
+    # 例如下面
+    # db.createUser( { user: "root", pwd: "ZT123zlt", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] } )
+
+    重点:
+      要记住 user、pwd
+
+  10.
+    db.grantRolesToUser ( "root", [ { role: "__system", db: "admin" } ] )
+    然后:
+    show users
+
+  11. 
+    exit;
+  
+  12.
+    vim /etc/mongod.conf
+
+    解除26行 #
+    用来打开 安全网
+    换行
+    后输入 
+      “authorization: enabled” # 即输入：authorization: enabled
+    保存退出
+
+  13.
+    systemctl restart mongod
+
+  14.
+    如果需要登录请使用:
+    use admin
+    db.auth("账号", "密码")
+    # 例如
+    # db.auth("root", "ZT123zlt")
+
+
+  15.
+    新建数据库:
+    use [数据库名称]
+
+  
+    # 然后随便插入点数据
+    # 例如
+    # db.mongo.insert({"name": "manfulls"})
+
+    然后:
+      show dbs
+    
+    然后:
+      exit;
+
+  16.
+    如果需要允许远程异机器登录
+    vim /etc/mongod.conf
+    将里面的 net 下面的 bindIp 设置 为 0.0.0.0
+
+    还需要检查防火墙是否开启 27017 端口
+
+  17.
+    可能用到的命令: 
+      启动
+        service mongod start
+      停止
+        service mongod stop
+      重启
+        service mongod restart
+      查看启动成功？
+        systemctl status mongod.service
+
+        cat /var/log/mongodb/mongod.log
+        或者
+        chkconfig mongod on
+
+      卸载
+        yum erase $(rpm -qa | grep mongodb-org) -y
+        rm -r /var/log/mongodb
+        rm -r /var/lib/mongo
+
+
+centos 安装 strapi:
+  0.
+    rm -rf *
+  1.
+    curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+  2.
+    yum -y install nodejs
+  3.
+    curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+  4.
+    yum install -y yarn
+  5.
+    yarn create strapi-app [项目名称]
+  6. 
+    选择 Custom (manual settings)
+  7.
+    选择 mongodb
+    # 具体看这个 url: https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/configurations/databases/mongodb.html#mongodb-installation
+  8.
+    输入新建的数据库名称
+    输入账号密码
+    省略。。。。
+  
+  9.
+    yarn develop
+    # 启动测试
+
+
+Strapi 对接 Mongo:

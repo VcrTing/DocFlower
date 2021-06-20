@@ -1,0 +1,43 @@
+/*
+    VcrTing 前端完美解决方案
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img, video, iframe, object {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+    max-width: 100%;
+    user-select: none;
+}
+
+/* 常用工具 */
+
+.pos-center {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

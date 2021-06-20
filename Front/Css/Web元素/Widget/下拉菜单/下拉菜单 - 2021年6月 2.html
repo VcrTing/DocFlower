@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="middle">
+        <div class="menu-wrapper">
+            <ul class="menu-ul">
+                <li>
+                    <a href="javascript:;">html</a>
+                    <ul class="inner-ul">
+                        <li><a href="#">div</a></li>
+                        <li><a href="#">h1</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">js</a>
+                    <ul class="inner-ul">
+                        <li><a href="#">string</a></li>
+                        <li><a href="#">array</a></li>
+                        <li><a href="#">object</a></li>
+                        <li><a href="#">number</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">css3</a>
+                    <ul class="inner-ul">
+                        <li><a href="#">transition</a></li>
+                        <li><a href="#">animation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">框架</a>
+                    <ul class="inner-ul">
+                        <li><a href="#">vue</a></li>
+                        <li><a href="#">react</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f1f1f1;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        color: white !important;
+        list-style: none !important;
+    }
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    a {
+        text-decoration: none;
+    }
+    .menu-wrapper {
+        width: 400px;
+        border-radius: 6px;
+        height: auto;
+        background: #2d3436;
+
+    }
+    .menu-ul {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+
+        width: 100%;
+        height: auto;
+        border-radius: 6p;
+        padding: 0 6px;
+    }
+    li {
+        text-align: center;
+    }
+    .menu-ul > li {
+        float: left;
+        padding: 12px 36px;
+        line-height: 20px;
+        background: #2d3436;
+        z-index: 100;
+        position: relative;
+        cursor: pointer;
+    }
+    .inner-ul {
+        z-index: 200;
+        margin-top: 12px;
+        position: absolute;
+        left: 0;
+        display: block;
+        border-radius: 6px;
+        width: 100%;
+
+        transform: scaleY(0);
+        transform-origin: 50% 0%;
+        transition: transform .4s;
+    }
+    .inner-ul > li {
+        line-height: 20px;
+        min-width: 40px;
+        padding: 8px 16px;
+        background: #e84393;
+    }
+
+    .inner-ul > li:hover {
+        background: #fd79a8;
+        cursor: pointer;
+    }
+    .menu-ul > li:hover {
+        background: #636e72;
+    }
+    .menu-ul > li:hover ul {
+        transform: scaleY(1);
+    }
+
+    </style>
+</body>
+</html>

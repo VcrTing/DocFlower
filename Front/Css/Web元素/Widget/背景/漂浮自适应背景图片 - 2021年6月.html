@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="landing-page">
+        <div class="page-content">
+            <h1>
+                Full Landing Page
+            </h1>
+            <p>
+                There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.
+            </p>
+            <a href="#">Get Started</a>
+        </div>
+    </div>
+
+    <div class="text">
+        <div>
+            Every single time you access a website, you leave tracks. Tracks that others can access. If you don't like the idea, find out what software can help you cover them.
+        </div>
+        <div>
+            Anti Tracks
+        </div>
+        <div>
+            Anti Tracks is a complete solution to protect your privacy and enhance your PC performance. With a simple click Anti Tracks securely erase your internet tracks, computer activities and programs history information stored in many hidden files on your computer.Anti Tracks support Internet Explorer, AOL, Netscape/Mozilla and Opera browsers. It also include more than 85 free plug-ins to extend erasing features to support popular programs such as ACDSee, Acrobat Reader, KaZaA, PowerDVD, WinZip, iMesh, Winamp and much more. Also you can easily schedule erasing tasks at specific time intervals or at Windows stat-up/ shutdown.To ensure maximum privacy protection Anti Tracks implements the US Department of Defense DOD 5220.22-M, Gutmann and NSA secure erasing methods, making any erased files unrecoverable even when using advanced recovery tools.
+        </div>
+        <div>
+            Free Download: <a href="http://www.deprice.com/antitracks.htm">http://www.deprice.com/antitracks.htm</a>
+        </div>
+        <div>
+            East-Tec Eraser
+        </div>
+        <div>
+            East-Tec Eraser goes beyond U.S. Department of Defense standards for the permanent erasure of digital information and easily removes every trace of sensitive data from your computer.
+        </div>
+        <div>
+            Completely destroy information stored without your knowledge or approval: Internet history, Web pages and pictures from sites visited on the Internet, unwanted cookies, chatroom conversations, deleted e-mail messages, temporary files, the Windows swap file, the Recycle Bin, previously deleted files, valuable corporate trade secrets, Business plans, personal files, photos or confidential letters, etc.East-Tec Eraser 2005 offers full support for popular browsers (Internet Explorer, Netscape Navigator, America Online, MSN Explorer, Opera), for Peer2Peer applications (Kazaa, Kazaa Lite, iMesh, Napster, Morpheus, Direct Connect, Limewire, Shareaza, etc.), and for other popular programs such as Windows Media Player, RealPlayer, Yahoo Messenger, ICQ, etc. Eraser has an intuitive interface and wizards that guide you through all the necessary steps needed to protect your privacy and sensitive information.Other features include support for custom privacy needs, user-defined erasure methods, command-line parameters, integration with Windows Explorer, and password protection.
+        </div>
+        <div>
+            Free Download: <a href="http://www.deprice.com/eastteceraserstandard.htm">http://www.deprice.com/eastteceraserstandard.htm</a>
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+
+        .landing-page {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+
+            position: relative;
+            overflow: hidden;
+        }
+        .landing-page::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://images.unsplash.com/photo-1623601913951-ed704f14f406?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60) no-repeat;
+            background-size: cover;
+            opacity: .412;
+
+            animation: anim 25s linear infinite;
+        }
+        @keyframes anim {
+            50% {
+                transform: scale(1.6);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .page-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+        .page-content h1 {
+            color: #ff7979;
+            text-transform: uppercase;
+            font-size: 50px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .page-content p {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .page-content a {
+            display: inline-block;
+            text-decoration: none;
+            color: #ff7979;
+            border: 2px solid #ff7979;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            transition: 0.4s linear;
+        }
+        .page-content a:hover {
+            color: #fff;
+            background: #ff7979;
+        }
+
+        .text {
+            padding: 10px;
+            text-align: justify;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .text div {
+            margin-bottom: 6px;
+        }
+
+
+    </style>
+</body>
+</html>
