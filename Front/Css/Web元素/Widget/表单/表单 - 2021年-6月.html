@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contact-section">
+        <div class="form-wrapper">
+            <h1>Contact Us</h1>
+            <div class="border"></div>
+            <form class="contact-form" method="post">
+                <input type="text" class="form-text" placeholder="Your Name">
+                <input type="text" class="form-text" placeholder="Your Email">
+                <input type="text" class="form-text" placeholder="Your Phone">
+                <textarea class="form-text" placeholder="Your Message"></textarea>
+                <input type="submit" value="Submit" class="form-btn"/>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.08;
+        }
+        .contact-section {
+            background: url(https://images.unsplash.com/photo-1605940169752-79212427091f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-wrapper {
+            width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #ddd 
+        }
+        .border {
+            width: 100px;
+            height: 10px;
+            background: #34495e;
+            margin: 40px auto;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 0 10px;
+            overflow: hidden;
+        }
+
+        .form-text {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 16px 0;
+            border: 0;
+            background: #121212;
+            padding: 20px 40px;
+            outline: none;
+            color: #ddd;
+            transition: .5s;
+            border-radius: 8px;
+        }
+        .form-text:hover {
+            box-shadow: 0 0 10px 4px #34495e;
+        }
+
+        textarea.form-text {
+            resize: none;
+            height: 120px;
+            border-radius: 8px;
+        }
+
+        .form-btn {
+            float: right;
+            border: 0;
+            background: #34495e;
+            color: #fff;
+            padding: 12px 50px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .form-btn:hover {
+            background: #2980b9;
+        }
+
+        
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

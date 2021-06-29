@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container middle">
+        <button class="btn btn1">Hover Me</button>
+        <button class="btn btn2">Hover Me</button>
+        <button class="btn btn3">Hover Me</button>
+        <button class="btn btn4">Hover Me</button>
+    </div>
+
+    <style>
+        .btn {
+            border: 1px solid #3498db;
+            background: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .btn1, .btn2 {
+            color: #3498db;
+        }
+        .btn3, .btn4 {
+            color: #fff;
+        }
+
+        .btn1:hover, .btn2:hover {
+            color: #fff;
+        }
+        .btn3:hover, .btn4:hover {
+            color: #3498db;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #3498db;
+            z-index: -1;
+            transition: .8s;
+        }
+
+        .btn1::before, .btn3::before {
+            top: 0;
+            border-radius: 0 0 50% 50%;
+        }
+        .btn2::before, .btn4::before {
+            bottom: 0;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .btn3::before, .btn4::before {
+            height: 180%;
+        }
+
+        .btn1:hover::before, .btn2:hover::before {
+            height: 180%;
+        }        
+        .btn3:hover::before, .btn4:hover::before {
+            height: 0%;
+        }
+
+        .container {
+            text-align: center;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

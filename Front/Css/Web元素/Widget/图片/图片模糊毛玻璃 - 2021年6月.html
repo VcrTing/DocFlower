@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="middle">
+        <div class="image">
+            <img alt="山" src="https://images.unsplash.com/photo-1624916888948-7015aa2b25b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80">
+            <div class="text">
+                This photo may have a violent content.
+            </div>
+            <button class="btn">Uncover Image</button>
+        </div>
+    </div>
+
+    <style>
+        .image {
+            width: 60vw;
+            height: auto;
+            overflow: hidden;
+            border-radius: 6px;
+            position: relative;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            filter: blur(15px);
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            text-shadow: 0 0 10px black;
+        }
+        .btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, .3);
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+
+        /*
+            https://images.unsplash.com/photo-1624916888948-7015aa2b25b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

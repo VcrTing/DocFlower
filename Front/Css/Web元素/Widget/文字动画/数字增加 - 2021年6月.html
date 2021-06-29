@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
+</head>
+<body>
+    <div class="middle">
+        <div class="counting-sec">
+            <div class="inner-width">
+                <div class="col">
+                    <i class="far fa-smile-wink"></i>
+                    <div class="num">1246</div>
+                    Speakers
+                </div>
+                <div class="col">
+                    <i class="fas fa-briefcase"></i>
+                    <div class="num">19</div>
+                    Services
+                </div>
+                <div class="col">
+                    <i class="far fa-money-bill-alt"></i>
+                    <div class="num">3654</div>
+                    Sells
+                </div>
+                <div class="col">
+                    <i class="far fa-object-group"></i>
+                    <div class="num">12000</div>
+                    Templates
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .counting-sec {
+            padding: 40px 0;
+            width: 100%;
+            background: linear-gradient(90deg, #3c6382, #82ccdd);
+        }
+
+        .inner-width {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .col {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .col i {
+            font-size: 40px;
+            color: #333;
+        }
+
+        .num {
+            font-size: 40px;
+            margin: 20px 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }    
+
+
+        .tran-up {
+            animation: tran_up 1.2s ease-out;
+        }    
+        @keyframes tran_up {
+            0% {
+                transform: translateY(20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+
+    <script>
+
+        var doms = document.querySelectorAll('.col')
+        doms = [].slice.call(doms)
+        console.log(doms)
+        doms.map(e => {
+            e.classList.add('tran-up')
+        })
+
+        $('.num').counterUp({
+            delay: 10,
+            time: 1000
+        })
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

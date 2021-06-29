@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>
+                Join Our Newletter
+            </h1>
+            <p>
+                There is a spirit, melancholy, such as early summer drizzle, like the late autumn cinnamon; There is a spirit, it is doomed to be wandering forever - erhu, jiangnan, wandering erhu.
+            </p>
+
+            <div class="email-box">
+                <i class="fas fa-envelope"></i>
+                <input class="tbox" type="email" name="" value="" placeholder="Your Email">
+                <button class="btn" type="button" name="button">Subscribe</button>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #333;
+        }
+
+        .container {
+            background: url(https://images.unsplash.com/photo-1624638190315-70a32d965324?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjh8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60) no-repeat center;
+            background-size: cover;
+            padding: 100px 40px;
+            text-align: center;
+            color: white;
+        }
+        .container p {
+            max-width: 600px;
+            margin: 40px auto;
+            font-size: 15px;
+            font-weight: 300;
+        }
+        .email-box {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .email-box i {
+            background: #2f3542;
+            width: 40px;
+            line-height: 40px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+        .tbox, .btn {
+            border: none;
+            outline: none;
+        }
+        .tbox {
+            width: 0px;
+            padding: 0;
+            transition: all .5s ease-out;
+        }
+        .email-box:hover > .tbox, .tbox:focus {
+            width: 260px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            background: #2f3542;
+            color: white;
+            padding: 0 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+
+        
+        /*
+        https://images.unsplash.com/photo-1624721887163-620416d82e30?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDZ8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

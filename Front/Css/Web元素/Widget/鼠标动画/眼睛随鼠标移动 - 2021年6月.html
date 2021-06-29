@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="eyes middle">
+        <div class="eye">
+            <div class="ball middle"></div>
+        </div>
+        <div class="eye">
+            <div class="ball middle"></div>
+        </div>
+    </div>
+
+    <style>
+        .eyes {
+            width: 100%;
+            text-align: center;
+        }
+        .eye {
+            width: 240px;
+            height: 120px;
+            background: #fff;
+            display: inline-block;
+            margin: 40px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+        .ball {
+            width: 40px;
+            height: 40px;
+            background: #000;
+            border-radius: 50%;
+            border: 15px solid #333; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #34495e;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+        var balls = document.getElementsByClassName('ball');
+        document.onmousemove = function() {
+            var x = event.clientX * 100 / window.innerWidth + '%';
+            var y = event.clientY * 100 / window.innerHeight + '%';
+
+            for (var i= 0; i< 2; i++ ) {
+                balls[i].style.left = x;
+                balls[i].style.top = y;
+                balls[i].style.transform = 'translate(-' + x +', -' + y + ')';
+            }
+        }
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>
