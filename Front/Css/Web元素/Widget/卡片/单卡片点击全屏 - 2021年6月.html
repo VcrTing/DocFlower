@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="book">
+            <div class="book__cover">
+                <div class="header-image">
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="title-wrap">
+                    <h1 class="article-title">BMW SHOWCASE</h1>
+                </div>
+
+                <p class="book__cover-expert">
+                    Shopkeeper wang, second master qin, second master song... Sixty years of old teahouse, after all, can not resist that cloudy air filled the age. Witness the change of the Wang shopkeeper, after all, did not escape the bully bully bully bullying. 
+                </p>
+                <br/>
+                <span class="social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                </span>
+            </div>
+
+            <div class="book__content">
+                <p>
+                    <span class="drop-cap">o</span>
+                    utside the gate of the Mogao Grottoes, there is a river, and across the river there is a slit of open space, high and low built several monk death pagodas. The tower is round, shaped near calabash, white outer coating. From the point of view of several slump chi, tower center vertical a wooden pile, surrounded by yellow mud, base base with black bricks. Historically, the monks who abbot the Mogao Grottoes were not rich, which can be proved from here. The setting sun, the cold wind, the crumbling tower group even more bleak.
+                </p>
+    
+                <p>
+                    There is a tower, because the construction of a relatively recent, relatively intact preservation. Tower body has inscription, move to read, suddenly surprised, its master, unexpectedly is that Wang Yuanlu!
+                </p>
+    
+                <p>
+                    History has recorded that he was a sinner in the Dunhuang Grottoes.
+                </p>
+                
+                <p>
+                    I have seen pictures of him, dressed in homespun cotton-padded clothes, with glassy-eyed and timid eyes. He was one of the common Chinese people you could see everywhere at that time. He was a farmer in Macheng, Hubei province. He fled to Gansu province and became a Taoist priest. After several twists and turns, unfortunately, he became the home of the Mogao Grottoes, controlling the most brilliant culture of ancient China. He took meager sums of money from foreign adventurers and had them cart away boxes and boxes of Dunhuang antiquities. Today, the experts of the Dunhuang Academy have to buy microfilms of Dunhuang documents from foreign museums again and again, and go to the magnifying machine with a sigh.
+                </p>
+    
+                <p>
+                    The flood of wrath could be poured upon him. But, he is too humble, too small, too ignorant, the biggest pour is just to cast pearls before swine, for a indifferent expression. Let his ignorant body shoulder all this cultural debt, even we would be bored.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .book {
+            overflow: hidden;
+            background: white;
+            height: 580px;
+            width: 400px;
+            box-shadow: 0 20px 30px -10px #ccc;
+            transition: all .5s ease-in-out;
+        }
+        .book:hover {
+            box-shadow: 0 5px 50px 10px #cfcfcf;
+        }
+        
+        .book__cover {
+            width: 100%;
+            height: 100%;
+        }
+        .book__content {
+            text-align: justify;
+            word-wrap: break-word;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: all 1.5s ease-in-out;
+            max-width: 60vw;
+            margin: 0 auto 5rem;
+            padding: 0 2rem;
+        }
+        .book__content p {
+            line-height: 1.8;
+            color: #3a3a3a;
+            margin-bottom: 2.5rem;
+        }
+
+        .header-image {
+            height: 220px;
+            background-image: url(https://images.unsplash.com/photo-1624857976814-344caa5d9ec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80);
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 3rem;
+            position: relative;
+            transition: all 0.45s ease-in-out;
+        }
+        .overlay {
+            transition: all .3s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;   
+        }
+        .title-wrap {
+            transform: translateY(0);
+            transition: transform 0.45s ease-in-out;
+        }
+        .article-title {
+            font-size: 2.2rem;
+            line-height: 1;
+            text-align: center;
+            letter-spacing: 0.025em;
+            transition: font-size 0.45s ease-in-out, color .3s ease-out;
+            color: #7a7a7a;
+        }
+
+
+        .drop-cap {
+            font-size: 55px;
+            line-height: 28px;
+        }
+
+        .book__cover-expert {
+            color: #7a7a7a;
+
+            padding: 1rem 1.5rem;
+            line-height: 1.7;
+            text-align: center;
+            opacity: 1;
+            max-width: 370px;
+
+            margin: 0 auto;
+            display: block;
+            overflow: hidden;
+            transition: all .5s ease-in-out;
+        }
+
+        .book__expanded {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+.book__cover-expert {
+    max-height: 10em;
+}
+.social {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.social i {
+    margin: .5rem;
+    color: #7a7a7a;
+}
+.book__expanded .book__content {
+    opacity: 1;
+}
+.book__expanded .header-image {
+    height: 40vw;
+}
+.book__expanded .book__cover {
+    height: auto;
+}
+.book__expanded .book__cover-expert,
+.book__expanded .social {
+    opacity: 0;
+    max-height: 0;
+    padding: 0rem;
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+        "use script"
+        $('.book').on('click', function() {
+            $(this).toggleClass('book__expanded')
+        })
+        
+        /*
+            https://images.unsplash.com/photo-1624857976814-344caa5d9ec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

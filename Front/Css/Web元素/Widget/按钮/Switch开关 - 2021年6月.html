@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="middle wrapper">
+        <input type="checkbox" name="music">
+    </div>
+
+    <style>
+        .wrapper {
+            font-size: 36px !important;
+        }
+        input[type="checkbox"] {
+            outline: none;
+            position: relative;
+            width: 4em;
+            height: 2em;
+            appearance: none;
+            -webkit-appearance: none;
+            background: #7f7f7f;
+            border-radius: 2em;
+            transition: .5s;
+            font-size: inherit;
+            box-shadow: inset 0 0 .2em rgba(0, 0, 0, .12);
+        }
+        input:checked[type="checkbox"] {
+            background: #3498db;
+        }
+        input[type="checkbox"]::before {
+            content: '';
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            transition: .5s;
+            background: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 0.05em .2em rgba(0, 0, 0, .12);
+        }
+        input:checked[type="checkbox"]::before {
+            left: 2em
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f3f3f3;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>
