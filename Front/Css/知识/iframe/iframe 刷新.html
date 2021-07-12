@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="middle">
+        <iframe name="pic_iframe" id="iframe" 
+            data-link="https://images.unsplash.com/photo-1625562675285-dca1b0e2b50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+            src="https://images.unsplash.com/photo-1625562675285-dca1b0e2b50e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+
+        </iframe>
+
+        <button id="btn" data-txt="Refresh The Iframe">
+            Refresh The Iframe
+        </button>
+    </div>
+
+    <style>
+        button {
+            width: 100%;
+            color: white;
+            font-size: 18px;
+            margin: 15px 0px;
+            padding: 12px 30px;
+            text-align: center;
+
+            background: rgb(193, 59, 14);
+            border: 4px solid rgb(178, 104, 50);
+
+            outline: none;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            border-radius: 50px;
+            transition: all .3s;
+        }
+        button:hover {
+            background: rgb(176, 53, 12);
+        }
+
+        .doing::before {
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .loading,
+        .doing::before {
+            background-size: 200%;
+            background-position-x: -100%;
+            animation: loop_bg 1.8s ease-in-out;
+            animation-iteration-count: infinite;
+            background-image: linear-gradient(to left, transparent, rgba(255, 255 ,255, 0.3), transparent);
+        }
+
+        @keyframes loop_bg {
+            0% {
+                background-position-x: -100%;
+            }
+            50% {
+                background-position-x: 100%;
+            }
+            100% {
+                background-position-x: -100%;
+            }
+        }
+
+        iframe {
+            width: 650px;
+            height: 70vh;
+            border: none;
+            outline: none;
+            margin: 24px auto;
+            border-radius: 12px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0 , 0.08);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #4e3c22;
+        }
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+        const ifr = '#iframe'
+
+        $('#btn').click(function() {
+            
+            $(this).addClass('doing'); $('#iframe').addClass('loading')
+            setTimeout(e => { 
+                $(this).removeClass('doing'); $(this).html($(this).data('txt')); $('#iframe').removeClass('loading')
+            }, 1800)
+            
+            iframe_refreash()
+        })
+
+        const iframe_refreash = function() {
+
+            $(ifr).attr('src', '')
+            
+            setTimeout(e => { $(ifr).attr('src', $(ifr).data('link')) }, 1800)
+        }
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>

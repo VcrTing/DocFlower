@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="middle rating">
+        <input type="radio" name="star" id="star_1"><label for="star_1"></label>
+        <input type="radio" name="star" id="star_2"><label for="star_2"></label>
+        <input type="radio" name="star" id="star_3"><label for="star_3"></label>
+        <input type="radio" name="star" id="star_4"><label for="star_4"></label>
+        <input type="radio" name="star" id="star_5"><label for="star_5"></label>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            display: block;
+            cursor: pointer;
+            width: 50px;
+        }
+
+        .rating label::before,
+        .rating label::after {
+            display: block;
+            font-size: 50px;
+            content: '\f005';
+            font-family: fontAwesome;
+        }
+
+        .rating label::before {
+            position: relative;
+            color: #101010;
+        }
+        .rating label::after {
+            position: absolute;
+            color: #1f9cff;
+            top: 0;
+            opacity: 0;
+            transition: .3s;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .rating label:hover::after,
+        .rating label:hover ~ label::after {
+            opacity: 1;
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        * {
+            font-family: 'montserrat', sans-serif;
+        }        
+    </style>
+
+    <script>
+
+        
+        /*
+            CSS揭秘 在线示例链接: https://play.csssecrets.io/ + 例子名称
+
+            CSS 背景与边框:  http://w3.org/TR/css-backgrounds
+            选择符:         http://w3.org/TR/selectors
+            可缩放矢量图形:  http://w3.org/TR/SVG
+        */ 
+        function $$(selector, context) {
+            context = context || document;
+            var element = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(elements);
+        }
+    </script>
+</body>
+</html>
